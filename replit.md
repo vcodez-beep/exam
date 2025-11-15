@@ -126,16 +126,17 @@ A comprehensive exam portal built with Flask, HTML, CSS, and PostgreSQL. This ap
      - Added automatic conversion of Render's `postgres://` URL format to SQLAlchemy 2.0+ compatible `postgresql://` format
      - This fix ensures compatibility with both Replit and Render deployment platforms
   
-  2. **Python 3.13 Compatibility Error** - "AssertionError: Class SQLCoreOperations...":
-     - Updated SQLAlchemy from 2.0.23 to 2.0.36 (Python 3.13 compatible)
+  2. **Python 3.13 Compatibility Errors**:
+     - **SQLAlchemy Error**: Updated SQLAlchemy from 2.0.23 to 2.0.36 (Python 3.13 compatible)
+     - **psycopg2 Error**: Updated psycopg2-binary from 2.9.9 to 2.9.11 (Python 3.13 compatible)
      - Updated gunicorn to 23.0.0
-     - Specified Python 3.11 in render.yaml using `pythonVersion: "3.11"`
      - Cleaned up duplicate entries in requirements.txt
+     - Removed invalid `pythonVersion` field from render.yaml (Render uses default Python 3.13)
   
-  3. **Updated Requirements**:
+  3. **Final Requirements** (All Python 3.13 Compatible):
      - Flask==3.0.0
      - Flask-SQLAlchemy==3.1.1
-     - psycopg2-binary==2.9.9
+     - psycopg2-binary==2.9.11 (upgraded for Python 3.13 compatibility)
      - Werkzeug==3.0.1
      - sqlalchemy==2.0.36 (upgraded for Python 3.13 compatibility)
      - gunicorn==23.0.0 (upgraded)

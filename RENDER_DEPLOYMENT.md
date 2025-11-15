@@ -75,12 +75,15 @@ This happens because:
 - SQLAlchemy 2.0+ requires format: `postgresql://...`
 - **FIXED**: The code now automatically converts the URL format
 
-**2. Python 3.13 Compatibility Error: `AssertionError: Class SQLCoreOperations...`**
+**2. Python 3.13 Compatibility Errors**
 
-This happens because:
-- Render was using Python 3.13 by default
+**Error A**: `AssertionError: Class SQLCoreOperations...`
 - Old SQLAlchemy 2.0.23 is incompatible with Python 3.13
-- **FIXED**: Updated to SQLAlchemy 2.0.36 and specified Python 3.11 in render.yaml
+- **FIXED**: Updated to SQLAlchemy 2.0.36 (Python 3.13 compatible)
+
+**Error B**: `ImportError: undefined symbol: _PyInterpreterState_Get`
+- psycopg2-binary 2.9.9 doesn't support Python 3.13
+- **FIXED**: Updated to psycopg2-binary 2.9.11 (Python 3.13 compatible)
 
 **3. Module Not Found Error: `ModuleNotFoundError: No module named 'app'`**
 
