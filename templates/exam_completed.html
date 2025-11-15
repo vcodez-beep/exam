@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Completed - Exam Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; padding: 40px 20px;">
+            <div style="font-size: 80px; margin-bottom: 24px; animation: scaleIn 0.5s ease-out;">✅</div>
+            <h1 style="margin-bottom: 16px; font-size: 36px;">Exam Finished!</h1>
+            <p style="font-size: 20px; color: #4a5568; margin-bottom: 32px; line-height: 1.6;">
+                Thank you for completing the examination.
+            </p>
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 32px; border-radius: 12px; margin-bottom: 32px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
+                <p style="font-size: 18px; margin-bottom: 12px; opacity: 0.95;">
+                    Your responses have been successfully submitted and recorded.
+                </p>
+                <p style="font-size: 16px; opacity: 0.9;">
+                    The administrator will review your answers and evaluate your performance.
+                </p>
+            </div>
+            
+            <div style="padding: 24px; background: #f7fafc; border-radius: 10px; border: 2px solid #e2e8f0; margin-bottom: 32px;">
+                <p style="color: #4a5568; font-size: 16px; line-height: 1.8;">
+                    📋 Your exam has been submitted<br>
+                    ✓ All your answers have been saved<br>
+                    📊 Results will be available to the administrator
+                </p>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('logout') }}"><button class="btn">Logout</button></a>
+    </div>
+</body>
+</html>
